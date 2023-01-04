@@ -14,6 +14,7 @@ function NavbarComponent() {
         await fetch('https://api.vercel.com/edge-config', {
             method: "POST",
             headers: {
+                "Authorization": "Bearer <cannaboys>",
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({items: cart.items})
