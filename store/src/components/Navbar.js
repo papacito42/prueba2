@@ -14,7 +14,7 @@ function NavbarComponent() {
         await fetch('https://tiendacbd.vercel.app/checkout', {
             method: "POST",
             headers: {
-                "Authorization": "Bearer <prj_pZ3o5PrugSyLX2DdrXsob4Gm0Jvp>",
+                "Authorization": "Bearer <YtvuhzJfZFIOdONeWv76Neiq>",
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({items: cart.items})
