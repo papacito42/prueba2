@@ -11,7 +11,7 @@ function NavbarComponent() {
     const handleShow = () => setShow(true);
 
     const checkout = async () => {
-        await fetch('https://api.vercel.com/v9/projects', {
+        await fetch('https://api.vercel.com/v6/deployments', {
             method: "POST",
             headers: {
                 "Authorization": "Bearer <5eokXN9OCaMVQu5gXElwoXpU>",
