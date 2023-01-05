@@ -11,10 +11,9 @@ function NavbarComponent() {
     const handleShow = () => setShow(true);
 
     const checkout = async () => {
-        await fetch('https://api.vercel.com/v6/deployments', {
+        await fetch('http://localhost:4000/checkout', {
             method: "POST",
             headers: {
-                "Authorization": "Bearer <5eokXN9OCaMVQu5gXElwoXpU>",
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({items: cart.items})
