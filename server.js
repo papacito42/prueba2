@@ -9,6 +9,9 @@ app.use(express.json());
 
 app.post("/checkout", async (req, res) => {
 
+  res.set('Allow', 'POST, HEAD');
+  res.send('This resource allows POST and HEAD requests');
+
     console.log(req.body);
     const items = req.body.items;
     let lineItems = [];
