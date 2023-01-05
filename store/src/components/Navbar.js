@@ -14,6 +14,7 @@ function NavbarComponent() {
         await fetch('https://api.vercel.com/v9/projects', {
             method: "POST",
             headers: {
+                "Authorization": "Bearer <5eokXN9OCaMVQu5gXElwoXpU>",
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({items: cart.items})
