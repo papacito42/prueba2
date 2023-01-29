@@ -16,7 +16,6 @@ function NavbarComponent() {
             mode: 'no-cors',
             method: "POST",
             headers: {
-              'Authorization': `Bearer ${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}`,
               'Content-Type': 'application/json'
             },
             body: JSON.stringify({items: cart.items})
