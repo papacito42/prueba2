@@ -11,21 +11,27 @@ function NavbarComponent() {
     const handleShow = () => setShow(true);
 
     const checkout = async () => {
-        await fetch('https://tiendacbd-papacito42.vercel.app/checkout', {
+        try {
+          const response = await fetch('https://checkout.stripe.com/', {
+            mode: 'no-cors',
             method: "POST",
             headers: {
-                'Content-Type': 'application/json',
+              'Authorization': `Bearer ${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}`,
+              'Content-Type': 'application/json'
             },
-             body: JSON.stringify({items: cart.items})
-        }).then((response) => {
-            return response.json();
-        }).then((response) => {
-            if(response.url) {
-                window.location.assign(response.url); // Forwarding user to Stripe
-            }
-        });
-    }
-
+            body: JSON.stringify({items: cart.items})
+          });
+          const responseJson = await response.json();
+          if (responseJson.url) {
+            window.location.assign(responseJson.url);
+          } else {
+            console.error('Unexpected response from Stripe API:', responseJson);
+          }
+        } catch (error) {
+          console.error('Error making checkout request:', error);
+        }
+      };
+    
     const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0);
 
     return (
