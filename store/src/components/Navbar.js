@@ -17,7 +17,7 @@ function NavbarComponent() {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${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}`
             },
-             body: JSON.stringify({items: cart.items})
+             body: JSON.stringify({items: cart.items});
         }).then((response) => {
             return response.json();
         }).then((response) => {
